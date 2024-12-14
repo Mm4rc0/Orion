@@ -1,0 +1,320 @@
+/* Reset de margens e padding */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle at bottom, #0b0d26, #000);
+    color: #f1f1f1;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    padding: 70px;
+}
+
+/* Fundo com estrelas e efeito nebulosa */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body::before {
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.2;
+}
+
+body::after {
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+    opacity: 0.1;
+}
+
+/* Estilo do cabeçalho */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+}
+
+.slogan {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 50px;
+    border-bottom: 1px solid #fff;
+}
+
+nav img {
+    height: 50px;
+}
+
+/* Menu de navegação */
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #ffdd00;
+}
+
+/* Menu hamburguer (para mobile) */
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.menu div {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+}
+
+/* Menú de navegação para telas pequenas */
+.nav-list {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 20px;
+}
+
+.nav-list.active {
+    display: flex;
+}
+
+/* Estilo para os cards de produtos */
+.product-cards {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.product-cards::-webkit-scrollbar {
+    height: 12px;
+}
+
+.product-cards::-webkit-scrollbar-thumb {
+    background-color: #444;
+    border-radius: 6px;
+}
+
+.product-cards::-webkit-scrollbar-track {
+    background: #222;
+}
+
+.card {
+    background: linear-gradient(145deg, #1c1f3b, #282a4d);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 500px;
+    flex: 0 0 auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-top: 15px;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.card p {
+    color: #a3b9ff;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.card button {
+    background: linear-gradient(145deg, #0049b7, #0063ff);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.card button:hover {
+    background: linear-gradient(145deg, #0059d3, #0073ff);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.card p strong {
+    color: #ffd700;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 999px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    /* Exibição do menu hamburguer */
+    .menu {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Ativar o menu hamburguer ao clicar */
+    .nav-list.active {
+        display: flex;
+    }
+
+    .product-cards {
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .card {
+        width: 300px;
+    }
+
+    .card h3, .card p {
+        font-size: 12px;
+    }
+}
+
+/* Pagamento */
+.pagamento-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(145deg, #1c1f3b, #282a4d);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pagamento-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.pagamento-container label {
+    font-size: 1.2rem;
+    color: #a3b9ff;
+    display: block;
+    margin: 10px 0;
+}
+
+.pagamento-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.pagamento-container button {
+    background: linear-gradient(145deg, #0049b7, #0063ff);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.pagamento-container button:hover {
+    background: linear-gradient(145deg, #0059d3, #0073ff);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsividade para a página de pagamento */
+@media (max-width: 999px) {
+    .pagamento-container {
+        padding: 20px;
+        max-width: 300px;
+    }
+
+    .pagamento-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .pagamento-container input {
+        font-size: 1rem;
+    }
+
+    .pagamento-container button {
+        font-size: 1rem;
+    }
+}
+
