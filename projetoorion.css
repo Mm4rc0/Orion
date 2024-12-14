@@ -317,4 +317,18 @@ nav img {
         font-size: 1rem;
     }
 }
+@media (min-width: 768px) {
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+    }
 
+    .menu {
+        display: none;
+    }
+}
