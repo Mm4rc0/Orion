@@ -408,3 +408,8 @@ nav img {
     color: #FFD700;
 }
     }
+@media (min-width: 1000px) {
+    .nav-list {
+        display: flex; /* Certifique-se de que a lista apareça */
+    }
+}
