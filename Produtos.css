@@ -64,15 +64,16 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 50px;
+    padding: 15px 50px;
     border-bottom: 1px solid #fff;
+    position: relative;
 }
 
 nav img {
     height: 50px;
 }
 
-/* Menu de navegação */
+/* Menu de navegação (Desktop) */
 .nav-list {
     list-style: none;
     display: flex;
@@ -90,7 +91,7 @@ nav img {
     color: #ffdd00;
 }
 
-/* Menu hambúrguer (para mobile) */
+/* Menu hambúrguer (Mobile) */
 .menu {
     display: none;
     cursor: pointer;
@@ -103,24 +104,36 @@ nav img {
     margin: 5px 0;
 }
 
-/* Menú de navegação para telas pequenas */
-.nav-list {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    padding: 20px;
+/* Menu de navegação para telas pequenas */
+@media (max-width: 999px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    /* Exibir o menu hambúrguer em telas pequenas */
+    .menu {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Ativar o menu hambúrguer ao clicar */
+    .nav-list.active {
+        display: flex;
+    }
 }
 
-.nav-list.active {
-    display: flex;
-}
-
-/* Estilo para as seções de produtos */
+/* Estilo para seções de produtos */
 .section {
     display: flex;
     overflow-x: auto;
