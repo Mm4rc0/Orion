@@ -1,3 +1,4 @@
+/* Reset de margens e padding */
 * {
     padding: 0;
     margin: 0;
@@ -71,7 +72,7 @@ nav img {
     height: 50px;
 }
 
-/* Menu de navegação */
+/* Menu de navegação para desktop */
 .nav-list {
     list-style: none;
     display: flex;
@@ -89,7 +90,7 @@ nav img {
     color: #ffdd00;
 }
 
-/* Menu hamburguer (para mobile) */
+/* Menu hambúrguer (para mobile) */
 .menu {
     display: none;
     cursor: pointer;
@@ -102,21 +103,29 @@ nav img {
     margin: 5px 0;
 }
 
-/* Menú de navegação para telas pequenas */
-.nav-list {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    padding: 20px;
-}
+/* Menu de navegação para dispositivos móveis */
+@media (max-width: 999px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        padding: 20px;
+    }
 
-.nav-list.active {
-    display: flex;
+    /* Exibir o menu ao clicar no ícone */
+    .nav-list.active {
+        display: flex;
+    }
+
+    /* Exibir menu hambúrguer em dispositivos móveis */
+    .menu {
+        display: block;
+    }
 }
 
 /* Estilo para os cards de produtos */
@@ -199,34 +208,8 @@ nav img {
     color: #ffd700;
 }
 
-/* Responsividade para telas menores */
+/* Responsividade para a página de produtos */
 @media (max-width: 999px) {
-    nav {
-        padding: 10px 20px;
-    }
-
-    /* Exibição do menu hamburguer */
-    .menu {
-        display: block;
-    }
-
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        width: 100%;
-        padding: 20px;
-    }
-
-    /* Ativar o menu hamburguer ao clicar */
-    .nav-list.active {
-        display: flex;
-    }
-
     .product-cards {
         gap: 15px;
         padding: 20px;
@@ -298,21 +281,4 @@ nav img {
 }
 
 /* Responsividade para a página de pagamento */
-@media (max-width: 999px) {
-    .pagamento-container {
-        padding: 20px;
-        max-width: 300px;
-    }
-
-    .pagamento-container h2 {
-        font-size: 1.8rem;
-    }
-
-    .pagamento-container input {
-        font-size: 1rem;
-    }
-
-    .pagamento-container button {
-        font-size: 1rem;
-    }
-}
+@media (max-width
