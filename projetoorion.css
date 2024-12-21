@@ -51,6 +51,7 @@ header h1 {
     font-size: 4rem;
     text-transform: uppercase;
     letter-spacing: 8px;
+    color: #FFD700;
 }
 
 .slogan {
@@ -64,7 +65,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 50px;
+    padding: 15px 50px;
     border-bottom: 1px solid #fff;
 }
 
@@ -72,7 +73,7 @@ nav img {
     height: 50px;
 }
 
-/* Menu de navegação para desktop */
+/* Menu de navegação (Desktop) */
 .nav-list {
     list-style: none;
     display: flex;
@@ -90,7 +91,7 @@ nav img {
     color: #ffdd00;
 }
 
-/* Menu hambúrguer (para mobile) */
+/* Menu hamburguer (para mobile) */
 .menu {
     display: none;
     cursor: pointer;
@@ -103,8 +104,17 @@ nav img {
     margin: 5px 0;
 }
 
-/* Menu de navegação para dispositivos móveis */
+/* Menú de navegação para telas pequenas */
 @media (max-width: 999px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    /* Exibição do menu hamburguer */
+    .menu {
+        display: block;
+    }
+
     .nav-list {
         display: none;
         flex-direction: column;
@@ -117,14 +127,9 @@ nav img {
         padding: 20px;
     }
 
-    /* Exibir o menu ao clicar no ícone */
+    /* Ativar o menu hamburguer ao clicar */
     .nav-list.active {
         display: flex;
-    }
-
-    /* Exibir menu hambúrguer em dispositivos móveis */
-    .menu {
-        display: block;
     }
 }
 
@@ -208,7 +213,7 @@ nav img {
     color: #ffd700;
 }
 
-/* Responsividade para a página de produtos */
+/* Responsividade para os cards de produtos */
 @media (max-width: 999px) {
     .product-cards {
         gap: 15px;
@@ -281,4 +286,21 @@ nav img {
 }
 
 /* Responsividade para a página de pagamento */
-@media (max-width
+@media (max-width: 999px) {
+    .pagamento-container {
+        padding: 20px;
+        max-width: 300px;
+    }
+
+    .pagamento-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .pagamento-container input {
+        font-size: 1rem;
+    }
+
+    .pagamento-container button {
+        font-size: 1rem;
+    }
+    }
